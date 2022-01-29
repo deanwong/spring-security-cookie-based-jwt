@@ -1,0 +1,14 @@
+version: '3'
+services:
+  fe:
+    container_name: comments-tree-frontend
+    image: wangding85/comments-tree-frontend
+    hostname: frontend
+    volumes:
+      - './comments.nginx.conf:/etc/nginx/conf.d/default.conf'
+    ports:
+      - 80:80
+  be:
+    container_name: comments-tree-backend
+    image: wangding85/comments-tree-backend
+    hostname: backend
